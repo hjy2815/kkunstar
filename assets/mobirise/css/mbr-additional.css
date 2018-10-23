@@ -2440,8 +2440,121 @@ body {
     font-size: 16px !important;
   }
 }
+.cid-r7iDNHwl89 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #232323;
+  padding-left: 0;
+  padding-right: 0;
+}
+.cid-r7iDNHwl89 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cid-r7iDNHwl89 ul li {
+  padding: 1rem 0;
+}
+.cid-r7iDNHwl89 ul li:hover {
+  color: #34ade7;
+}
+.cid-r7iDNHwl89 .socicon {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.cid-r7iDNHwl89 .mbr-iconfont {
+  margin-right: 1em;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.cid-r7iDNHwl89 .google-map {
+  height: 100%;
+  position: relative;
+}
+.cid-r7iDNHwl89 .map {
+  padding: 0;
+  height: inherit !important;
+}
+.cid-r7iDNHwl89 .social-list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+.cid-r7iDNHwl89 .social-list .soc-item {
+  padding: 0;
+  margin: 2rem 2rem 0 0;
+}
+.cid-r7iDNHwl89 .social-list a {
+  margin: 0;
+  opacity: .5;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+.cid-r7iDNHwl89 .social-list a:hover {
+  opacity: 1;
+}
+.cid-r7iDNHwl89 .row-element,
+.cid-r7iDNHwl89 .image-element {
+  padding: 0;
+}
+.cid-r7iDNHwl89 .underline {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.cid-r7iDNHwl89 .underline .line {
+  width: 5rem;
+  height: 3px;
+  background: linear-gradient(90deg, #34ade7, #fe525b);
+  display: inline-block;
+}
+@media (min-width: 1500px) {
+  .cid-r7iDNHwl89 .text-content {
+    padding: 5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1499px) {
+  .cid-r7iDNHwl89 .text-content {
+    padding: 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-r7iDNHwl89 .text-content {
+    padding: 2rem 1rem;
+  }
+  .cid-r7iDNHwl89 .underline .line {
+    height: 2px;
+  }
+  .cid-r7iDNHwl89 .mbr-title,
+  .cid-r7iDNHwl89 .underline,
+  .cid-r7iDNHwl89 .mbr-text,
+  .cid-r7iDNHwl89 .mbr-section-btn {
+    text-align: center !important;
+  }
+}
+.cid-r7iDNHwl89 .mbr-title,
+.cid-r7iDNHwl89 .underline {
+  color: #ffffff;
+}
+.cid-r7iDNHwl89 .mbr-text,
+.cid-r7iDNHwl89 .mbr-section-btn {
+  color: #ffffff;
+}
+.cid-r7iDNHwl89 mbr-list LI {
+  color: #ffffff;
+}
+.cid-r7iDNHwl89 mbr-list {
+  text-align: center;
+}
+.cid-r7iDNHwl89 .mbr-list,
+.cid-r7iDNHwl89 .social-list mbr-list {
+  color: #ffffff;
+}
 .cid-qMeoQfHmzW {
-  padding-top: 30px;
+  padding-top: 75px;
   padding-bottom: 30px;
   background-color: #efefef;
 }

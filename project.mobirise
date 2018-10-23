@@ -1,6 +1,6 @@
 {
   "settings": {
-    "name": "paygram",
+    "name": "kkunstar",
     "currentPage": "index.html",
     "theme": {
       "name": "storem4",
@@ -32,7 +32,7 @@
       ]
     },
     "versionFirst": "4.5.3",
-    "uniqCompNum": 26,
+    "uniqCompNum": 27,
     "versionPublish": "4.8.1",
     "path": "@PROJECT_PATH@",
     "screenshot": "screenshot.png",
@@ -69,7 +69,9 @@
         "name": "Yeon Sung",
         "url": "https://fonts.googleapis.com/css?family=Yeon+Sung:400"
       }
-    ]
+    ],
+    "cookiesAlert": "",
+    "gdpr": ""
   },
   "pages": {
     "index.html": {
@@ -1554,6 +1556,134 @@
           "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "padding-left": "0",
+            "padding-right": "0",
+            "ul": {
+              "list-style": "none",
+              "padding": "0",
+              "margin": "0",
+              "li": {
+                "padding": "1rem 0",
+                "&:hover": {
+                  "color": "@primaryColor"
+                }
+              }
+            },
+            ".main": {
+              "& when (@reverseContent)": {
+                "flex-direction": "row-reverse"
+              }
+            },
+            ".socicon": {
+              "color": "#fff",
+              "font-size": "1.5rem"
+            },
+            ".mbr-iconfont": {
+              "margin-right": "1em",
+              "display": "inline-block",
+              "vertical-align": "bottom"
+            },
+            ".google-map": {
+              "height": "100%",
+              "position": "relative"
+            },
+            ".map": {
+              "padding": "0",
+              "height": "inherit !important"
+            },
+            ".social-list": {
+              "padding-left": "0",
+              "margin-bottom": "0",
+              "list-style": "none",
+              "display": "flex",
+              "flex-wrap": "wrap",
+              "justify-content": "flex-start",
+              "-webkit-justify-content": "flex-start",
+              ".soc-item": {
+                "padding": "0",
+                "margin": "2rem 2rem 0 0"
+              },
+              "a": {
+                "margin": "0",
+                "opacity": ".5",
+                "-webkit-transition": ".2s linear",
+                "transition": ".2s linear",
+                "&:hover": {
+                  "opacity": "1"
+                }
+              }
+            },
+            ".row-element,.image-element": {
+              "padding": "0"
+            },
+            ".underline": {
+              "padding-top": ".5rem",
+              "padding-bottom": ".5rem",
+              ".line": {
+                "width": "5rem",
+                "height": "3px",
+                "background": "linear-gradient(90deg, @primaryColor, @secondaryColor)",
+                "display": "inline-block"
+              }
+            },
+            "@media (min-width: 1500px)": {
+              ".text-content": {
+                "padding": "5rem"
+              }
+            },
+            "@media (min-width: 768px) and (max-width: 1499px)": {
+              ".text-content": {
+                "padding": "3rem"
+              }
+            },
+            "@media (max-width: 767px)": {
+              ".text-content": {
+                "padding": "2rem 1rem"
+              },
+              ".underline": {
+                ".line": {
+                  "height": "2px"
+                }
+              },
+              ".mbr-title,.underline,.mbr-text,.mbr-section-btn": {
+                "text-align": "center !important"
+              }
+            },
+            ".mbr-title,.underline": {
+              "color": "#ffffff"
+            },
+            ".mbr-text,.mbr-section-btn": {
+              "color": "#ffffff"
+            },
+            "mbr-list LI": {
+              "color": "#ffffff"
+            },
+            "mbr-list": {
+              "text-align": "center"
+            },
+            ".mbr-list,.social-list mbr-list": {
+              "color": "#ffffff"
+            }
+          },
+          "_name": "info3",
+          "_customHTML": "<section class=\"info3\" group=\"Info\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"0\">\n        <input type=\"map\" title=\"Map\" name=\"googleMap\" place-id=\"ChIJv4fDS1WhfDURkpt9W9336OM\" value=\"서울시 강남구 역삼동 734-7번지\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" condition=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show List\" name=\"showList\" checked>\n\n        <select title=\"Icons\" name=\"iconsCount\">\n            <option value=\"0\" selected>0</option>\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n\n        <input type=\"checkbox\" title=\"Media on Left/Right\" name=\"reverseContent\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\" parallax>\n            <input type=\"color\" title=\"Background Color\" value=\"#232323\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.6\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container-fluid\">\n        <div class=\"row main\">\n            <div class=\"col-md-6 map\">\n              <div class=\"google-map\" mbr-map=\"googleMap\">\n    </div>\n            </div>\n            <div class=\"col-md-6 text-element\">\n                <div class=\"text-content\">\n                    <h2 class=\"mbr-title pt-2 mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-title,.underline\">\n                        CONTACT INFORMATION</h2>\n                    <div class=\"underline align-left\" mbr-if=\"showUnderline && showTitle\">\n                         <div class=\"line\"></div>\n                    </div>\n                    <div class=\"mbr-section-text\">\n                        <p class=\"mbr-text pt-3 mbr-light mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-text\">\n                            꾼미디어</p>\n                    </div>\n                    <div class=\"mbr-list  mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-list,.social-list\" data-multiline mbr-article mbr-if=\"showList\">\n                        <ul class=\"mbr-list mbr-fonts-style\" mbr-text mbr-theme-style=\"display-5\" data-app-selector=\"mbr-list\">\n                          <li> <span class=\"mbri-globe mbr-iconfont\"></span>&nbsp;서울시 강남구 역삼동 734-7번지,2층</li>\n                          <li><span class=\"mbri-alert mbr-iconfont\"></span>+82 (02) 6952-2560</li>\n                          <li><span class=\"mbri-letter mbr-iconfont\"></span>&nbsp;kkun-ceo@naver.com&nbsp;</li>\n                        </ul>\n                    </div>\n                     <div class=\"social-list align-right\" mbr-if=\"iconsCount > 0\">\n                        <div class=\"soc-item\" mbr-if=\"iconsCount>0\">\n                            <a href=\"https://twitter.com/mobirise\" target=\"_blank\">\n                                <span mbr-icon class=\"socicon-twitter socicon mbr-iconfont mbr-iconfont-social\"></span>\n                            </a>\n                        </div>\n                        <div class=\"soc-item\" mbr-if=\"iconsCount>1\">\n                            <a href=\"https://www.facebook.com/pages/Mobirise/1616226671953247\" target=\"_blank\">\n                                <span mbr-icon class=\"socicon-facebook socicon mbr-iconfont mbr-iconfont-social\"></span>\n                            </a>\n                        </div>\n                        <div class=\"soc-item\" mbr-if=\"iconsCount>2\">\n                            <a href=\"https://www.youtube.com/c/mobirise\" target=\"_blank\">\n                                <span mbr-icon class=\"socicon-youtube socicon mbr-iconfont mbr-iconfont-social\"></span>\n                            </a>\n                        </div>\n                        <div class=\"soc-item\" mbr-if=\"iconsCount>3\">\n                            <a href=\"https://instagram.com/mobirise\" target=\"_blank\">\n                                <span mbr-icon class=\"socicon-instagram socicon mbr-iconfont mbr-iconfont-social\"></span>\n                            </a>\n                        </div>\n                        <div class=\"soc-item\" mbr-if=\"iconsCount>4\">\n                            <a href=\"https://plus.google.com/u/0/+Mobirise\" target=\"_blank\">\n                                <span mbr-icon class=\"socicon-googleplus socicon mbr-iconfont mbr-iconfont-social\"></span>\n                            </a>\n                        </div>\n                        <div class=\"soc-item\" mbr-if=\"iconsCount>5\">\n                            <a href=\"https://www.behance.net/Mobirise\" target=\"_blank\">\n                                <span mbr-icon class=\"socicon-behance socicon mbr-iconfont mbr-iconfont-social\"></span>\n                            </a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "r7iDNHwl89",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "info3-q"
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
@@ -1650,7 +1780,7 @@
             }
           },
           "_name": "footer6",
-          "_customHTML": "<section group=\"Footers\" global mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" inline title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"range\" inline title=\"Icons Count\" name=\"iconsCount\" min=\"1\" max=\"10\" step=\"1\" value=\"1\" condition=\"showCard==3\">\n        <select title=\"Column Count\" name=\"showCard\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n        </select>\n        <input type=\"color\" title=\"Circle Color\" name=\"circleColor\" value=\"#44f7b3\" condition=\"showIcons\">\n        <input type=\"checkbox\" title=\"Show Cards\" name=\"showCards\" checked>\n        <input type=\"checkbox\" title=\"Gray Filter\" name=\"grayFilter\">\n        <input type=\"checkbox\" name=\"visa\" title=\"Visa\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"mastercard\" title=\"Master Card\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"americanexpress\" title=\"American Express\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"paypal\" title=\"PayPal\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"amazon\" title=\"Amazon\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"ebay\" title=\"Ebay\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"westernunion\" title=\"Western Union\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"unionpayments\" title=\"Union payments\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"bitcoin\" title=\"Bitcoin\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"discover\" title=\"Discover\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"jcb\" title=\"Jcb\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"stripe\" title=\"Stripe\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"dinersclub\" title=\"Diners Club\" condition=\"showCards\">\n\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#efefef\" selected>\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#3C3C3C\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"row justify-content-center align-center\">\n          <div class=\"col-md-4 list-column\" mbr-if=\"showCard>0\" mbr-style=\"{'col-md-12': showCard == 1,\n                           'col-md-6': showCard == 2}\">\n            <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-if=\"showTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title\">꾼미디어\n            </h3>\n            <hr mbr-if=\"showTitle\">\n            <div class=\"mbr-list counter-container mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list,.social-media\" data-multiline mbr-article>\n              <ul>\n                <li>주소\n : 서울시 강남구 역삼동 734-7번지,2층</li><li>대표\n : 김제옥&nbsp;</li><li>사업자등록번호 : 385-86-01151&nbsp;</li><li>통신판매업신고번호\n</li><li>개인정보관리자\n : 김정환&nbsp;</li>\n              </ul>\n            </div>\n          </div>\n          <div class=\"col-md-4 list-column\" mbr-style=\"{'col-md-6': showCard == 2}\" mbr-if=\"showCard>1\">\n            <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-if=\"showTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title\">About\n            </h3>\n            <hr mbr-if=\"showTitle\">\n            <div class=\"mbr-list counter-container mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list,.social-media\" data-multiline mbr-article>\n              <ul>\n                <li>대표번호\n : 02.6952.2560&nbsp;</li><li>메일\n : kkun-ceo@naver.com&nbsp;</li><li>입금계좌정보\n</li><li>우리은행 1005-103-540958</li>\n              </ul>\n            </div>\n          </div>\n          <div class=\"col-md-4\" mbr-if=\"showCard>2\">\n            <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-if=\"showTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title\">Connect\n            </h3>\n            <hr mbr-if=\"showTitle\">\n            <div class=\"social-media\">\n               <ul>\n                 <li mbr-if=\"iconsCount > 0\">\n                     <a class=\"icon-transition\" href=\"http://pf.kakao.com/_ZcFTj\" target=\"_blank\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black fa-commenting fa\" style=\"color: rgb(255, 239, 0); font-size: 50px;\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 1\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-twitter socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 2\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-linkedin socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 3\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-youtube socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 4\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 5\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 6\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 7\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 8\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 9\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n               </ul>\n            </div>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row align-center justify-content-center\">\n          <div class=\"col-md-12\">\n            <ul class=\"card-support\" mbr-if=\"showCards\">\n                <li mbr-if=\"visa\">\n                    <img src=\"../_images/payments/visa.png\" height=\"30\" alt=\"Visa\">\n                </li>\n                <li mbr-if=\"mastercard\">\n                    <img src=\"../_images/payments/master-card.png\" height=\"30\" alt=\"Master Card\">\n                </li>\n                <li mbr-if=\"americanexpress\">\n                    <img src=\"../_images/payments/american-express.png\" height=\"30\" alt=\"American Express\">\n                </li>\n                <li mbr-if=\"paypal\">\n                    <img src=\"../_images/payments/paypal.png\" height=\"30\" alt=\"PayPal\">\n                </li>\n                <li mbr-if=\"dinersclub\">\n                    <img src=\"../_images/payments/diners-club.png\" height=\"30\" alt=\"Diners-club\">\n                </li>\n                <li mbr-if=\"discover\">\n                    <img src=\"../_images/payments/discover.png\" height=\"30\" alt=\"Discover\">\n                </li>\n                <li mbr-if=\"bitcoin\">\n                    <img src=\"../_images/payments/bitcoin.png\" height=\"30\" alt=\"Bitcoin\">\n                </li>\n                <li mbr-if=\"westernunion\">\n                    <img src=\"../_images/payments/western-union.png\" height=\"30\" alt=\"Western Union\">\n                </li>\n                <li mbr-if=\"jcb\">\n                    <img src=\"../_images/payments/jcb.png\" height=\"30\" alt=\"JCB\">\n                </li>\n                <li mbr-if=\"stripe\">\n                    <img src=\"../_images/payments/stripe.png\" height=\"30\" alt=\"Stripe\">\n                </li>\n                <li mbr-if=\"amazon\">\n                    <img src=\"../_images/payments/amazon.png\" height=\"30\" alt=\"Amazon\">\n                </li>\n                <li mbr-if=\"ebay\">\n                    <img src=\"../_images/payments/ebay.png\" height=\"30\" alt=\"Ebay\">\n                </li>\n                <li mbr-if=\"unionpayments\">\n                    <img src=\"../_images/payments/union-pay.png\" height=\"30\" alt=\"Union Pay\">\n                </li>\n            </ul>\n            <h3 class=\"mbr-fonts-style sub-info\" mbr-theme-style=\"display-7\" data-app-selector=\".sub-info\">© Copyright 2018 kkunstar&nbsp;- All Rights Reserved</h3>\n          </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section group=\"Footers\" global mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" inline title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"range\" inline title=\"Icons Count\" name=\"iconsCount\" min=\"1\" max=\"10\" step=\"1\" value=\"1\" condition=\"showCard==3\">\n        <select title=\"Column Count\" name=\"showCard\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n        </select>\n        <input type=\"color\" title=\"Circle Color\" name=\"circleColor\" value=\"#44f7b3\" condition=\"showIcons\">\n        <input type=\"checkbox\" title=\"Show Cards\" name=\"showCards\" checked>\n        <input type=\"checkbox\" title=\"Gray Filter\" name=\"grayFilter\">\n        <input type=\"checkbox\" name=\"visa\" title=\"Visa\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"mastercard\" title=\"Master Card\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"americanexpress\" title=\"American Express\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"paypal\" title=\"PayPal\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"amazon\" title=\"Amazon\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"ebay\" title=\"Ebay\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"westernunion\" title=\"Western Union\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"unionpayments\" title=\"Union payments\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"bitcoin\" title=\"Bitcoin\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"discover\" title=\"Discover\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"jcb\" title=\"Jcb\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"stripe\" title=\"Stripe\" condition=\"showCards\">\n        <input type=\"checkbox\" name=\"dinersclub\" title=\"Diners Club\" condition=\"showCards\">\n\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background2.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#efefef\" selected>\n        </fieldset>\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#3C3C3C\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div class=\"container\">\n        <div class=\"row justify-content-center align-center\">\n          <div class=\"col-md-4 list-column\" mbr-if=\"showCard>0\" mbr-style=\"{'col-md-12': showCard == 1,\n                           'col-md-6': showCard == 2}\">\n            <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-if=\"showTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title\">꾼미디어\n            </h3>\n            <hr mbr-if=\"showTitle\">\n            <div class=\"mbr-list counter-container mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list,.social-media\" data-multiline mbr-article>\n              <ul>\n                <li>주소\n : 서울시 강남구 역삼동 734-7번지,2층</li><li>대표\n : 김제옥&nbsp;</li><li>사업자등록번호 : 385-86-01151&nbsp;</li><li>통신판매업신고번호\n</li><li>개인정보관리자\n : 김정환&nbsp;</li>\n              </ul>\n            </div>\n          </div>\n          <div class=\"col-md-4 list-column\" mbr-style=\"{'col-md-6': showCard == 2}\" mbr-if=\"showCard>1\">\n            <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-if=\"showTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title\">About\n            </h3>\n            <hr mbr-if=\"showTitle\">\n            <div class=\"mbr-list counter-container mbr-fonts-style\" mbr-theme-style=\"display-4\" data-app-selector=\".mbr-list,.social-media\" data-multiline mbr-article>\n              <ul>\n                <li>대표번호\n : 02)6952-2560&nbsp;</li><li>메일\n : kkun-ceo@naver.com&nbsp;</li><li>입금계좌정보\n</li><li>우리은행 1005-103-540958</li>\n              </ul>\n            </div>\n          </div>\n          <div class=\"col-md-4\" mbr-if=\"showCard>2\">\n            <h3 class=\"mbr-section-title mbr-fonts-style mbr-bold\" mbr-if=\"showTitle\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-section-title\">Connect\n            </h3>\n            <hr mbr-if=\"showTitle\">\n            <div class=\"social-media\">\n               <ul>\n                 <li mbr-if=\"iconsCount > 0\">\n                     <a class=\"icon-transition\" href=\"http://pf.kakao.com/_ZcFTj\" target=\"_blank\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black fa-commenting fa\" style=\"color: rgb(255, 239, 0); font-size: 50px;\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 1\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-twitter socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 2\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-linkedin socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 3\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-youtube socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 4\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 5\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 6\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 7\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 8\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n                 <li mbr-if=\"iconsCount > 9\">\n                     <a class=\"icon-transition\" href=\"#\">\n                         <span mbr-icon class=\"mbr-iconfont mbr-black socicon-rss socicon\"></span>\n                     </a>\n                 </li>\n               </ul>\n            </div>\n          </div>\n        </div>\n        <hr>\n        <div class=\"row align-center justify-content-center\">\n          <div class=\"col-md-12\">\n            <ul class=\"card-support\" mbr-if=\"showCards\">\n                <li mbr-if=\"visa\">\n                    <img src=\"../_images/payments/visa.png\" height=\"30\" alt=\"Visa\">\n                </li>\n                <li mbr-if=\"mastercard\">\n                    <img src=\"../_images/payments/master-card.png\" height=\"30\" alt=\"Master Card\">\n                </li>\n                <li mbr-if=\"americanexpress\">\n                    <img src=\"../_images/payments/american-express.png\" height=\"30\" alt=\"American Express\">\n                </li>\n                <li mbr-if=\"paypal\">\n                    <img src=\"../_images/payments/paypal.png\" height=\"30\" alt=\"PayPal\">\n                </li>\n                <li mbr-if=\"dinersclub\">\n                    <img src=\"../_images/payments/diners-club.png\" height=\"30\" alt=\"Diners-club\">\n                </li>\n                <li mbr-if=\"discover\">\n                    <img src=\"../_images/payments/discover.png\" height=\"30\" alt=\"Discover\">\n                </li>\n                <li mbr-if=\"bitcoin\">\n                    <img src=\"../_images/payments/bitcoin.png\" height=\"30\" alt=\"Bitcoin\">\n                </li>\n                <li mbr-if=\"westernunion\">\n                    <img src=\"../_images/payments/western-union.png\" height=\"30\" alt=\"Western Union\">\n                </li>\n                <li mbr-if=\"jcb\">\n                    <img src=\"../_images/payments/jcb.png\" height=\"30\" alt=\"JCB\">\n                </li>\n                <li mbr-if=\"stripe\">\n                    <img src=\"../_images/payments/stripe.png\" height=\"30\" alt=\"Stripe\">\n                </li>\n                <li mbr-if=\"amazon\">\n                    <img src=\"../_images/payments/amazon.png\" height=\"30\" alt=\"Amazon\">\n                </li>\n                <li mbr-if=\"ebay\">\n                    <img src=\"../_images/payments/ebay.png\" height=\"30\" alt=\"Ebay\">\n                </li>\n                <li mbr-if=\"unionpayments\">\n                    <img src=\"../_images/payments/union-pay.png\" height=\"30\" alt=\"Union Pay\">\n                </li>\n            </ul>\n            <h3 class=\"mbr-fonts-style sub-info\" mbr-theme-style=\"display-7\" data-app-selector=\".sub-info\">© Copyright 2018 kkunstar&nbsp;- All Rights Reserved</h3>\n          </div>\n        </div>\n    </div>\n</section>",
           "_cid": "qMeoQfHmzW",
           "_anchor": "footer6-o",
           "_protectedParams": [],
